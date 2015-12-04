@@ -1,0 +1,6 @@
+target
+.sonar
+.project
+.classpath
+.idea
+*.iml
