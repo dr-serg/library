@@ -7,7 +7,7 @@ public interface Repository<T> {
 
     T findOne(Object entityId, Class<T> tClass);
 
-    List<T> findAll();
+    List<T> findAll(Class<T> aClass);
 
     T save(T entity);
 
