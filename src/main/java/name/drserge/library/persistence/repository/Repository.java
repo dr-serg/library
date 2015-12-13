@@ -5,11 +5,11 @@ import java.util.List;
 
 public interface Repository<T> {
 
-    T findOne(Object entityId, Class<T> tClass);
+    T findOne(final Object entityId, final Class<T> tClass);
 
-    List<T> findAll(Class<T> aClass);
+    List<T> findAll(final Class<T> aClass);
 
-    T save(T entity);
+    T save(final T entity);
 
-    void delete(Object entityId);
+    void delete(final T entity);
 }

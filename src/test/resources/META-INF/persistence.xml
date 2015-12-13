@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="library-hasql-persistence-unit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
 
         <class>name.drserge.library.persistence.model.Author</class>
         <class>name.drserge.library.persistence.model.Book</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:target/testdb;shutdown=true"/>
-            <property name="javax.persistence.jdbc.use" value="test"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:."/>
+            <property name="javax.persistence.jdbc.use" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
 
     </persistence-unit>

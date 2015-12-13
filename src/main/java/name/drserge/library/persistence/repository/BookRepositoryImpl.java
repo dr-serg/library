@@ -2,24 +2,16 @@ package name.drserge.library.persistence.repository;
 
 import name.drserge.library.persistence.model.Book;
 
-import java.util.List;
+
+public class BookRepositoryImpl extends GenericJpaRepository<Book> implements BookRepository {
 
 
-public class BookRepositoryImpl implements BookRepository {
-
-    public Book findOne(final Object entityId, final Class<Book> bookClass) {
-        return null;
+    public BookRepositoryImpl(String persistenceUnitName) {
+        super(persistenceUnitName);
     }
 
-    public List<Book> findAll() {
-        return null;
-    }
-
-    public Book save(final Book entity) {
-        return null;
-    }
-
-    public void delete(final Object entityId) {
-
+    @Override
+    public Book findOne(Long bookId) {
+        return super.findOne(bookId, Book.class);
     }
 }

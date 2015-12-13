@@ -9,4 +9,9 @@ public class AuthorRepositoryImpl extends GenericJpaRepository<Author> implement
         super(persistenceUnitName);
     }
 
+    @Override
+    public Author findOne(Long authorId) {
+        return super.findOne(authorId, Author.class);
+    }
+
 }
